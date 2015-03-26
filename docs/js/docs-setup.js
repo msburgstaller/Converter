@@ -19,7 +19,7 @@ NG_DOCS={
       "type": "controller",
       "moduleName": "sbc",
       "shortDescription": "Root controller which handels API calls and data handling for conversion and conversion itself",
-      "keywords": "$scope api base calls controller controllers conversion convert currencies currency data handels handling method queries root sbc service update updatecurrency updates"
+      "keywords": "$scope api base calls controller controllers conversion convert currencies currency data handels handling method model object operations queries result root sbc service update updatecurrency updates"
     },
     {
       "section": "api",
