@@ -7,19 +7,28 @@
  */
 angular.module("sbc.controllers", [])
 
-/**
- * @ngdoc controller
- * @name sbc.controllers:ConversionSelectionCtrl
- *
- * @requires $scope
- * @requires Currencies
- *
- * @description
- * Root controller which handels API calls and data handling for conversion and conversion itself
- */
+        /**
+         * @ngdoc controller
+         * @name sbc.controllers:ConversionSelectionCtrl
+         *
+         * @requires $scope
+         * @requires Currencies
+         *
+         * @description
+         * Root controller which handels API calls and data handling for conversion and conversion itself
+         */
         .controller('ConversionSelectionCtrl', function ($scope, Currencies)
         {
 
+            /**
+             * @ngdoc object
+             * @name sbc.controllers:ConversionSelectionCtrlh#conversion
+             *
+             * @methodOf sbc.controllers:ConversionSelectionCtrl
+             *
+             * @description
+             * Conversion model used for all conversion operations (mirrors to convert result found in Currencies service)
+             */
             $scope.conversion = {
                 baseCurrency: "",
                 baseValue: 1,
@@ -90,5 +99,4 @@ angular.module("sbc.controllers", [])
                         });
             };
 
-        })
-;
+        });
