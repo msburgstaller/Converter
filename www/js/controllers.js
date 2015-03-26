@@ -51,7 +51,8 @@ angular.module("sbc.controllers", [])
 
             $scope.convert = function ()
             {
-                Currencies.convert($scope.conversion.baseValue, $scope.conversion.targetCurrency, $scope.conversion.baseCurrency)
+                Currencies
+                        .convert($scope.conversion.baseValue, $scope.conversion.targetCurrency, $scope.conversion.baseCurrency)
                         .then(function (data)
                         {
                             $scope.conversion = data;
