@@ -6,6 +6,7 @@
  */
 
 var gulp = require('gulp');
+var serve = require('gulp-serve');
 
 gulp.task('default', function ()
 {
@@ -19,3 +20,10 @@ gulp.task('docs', [], function ()
             .pipe(gulpDocs.process())
             .pipe(gulp.dest('./docs'));
 });
+
+//gulp.task('serve', serve('public'));
+//gulp.task('serve-docs', serve(['public', 'build']));
+gulp.task('serve-docs', serve({
+    root: ['docs'],
+    port: 8005
+}));

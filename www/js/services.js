@@ -1,7 +1,7 @@
 /**
  * @ngdoc overview
  * @name sbc.services
- * @module sbconverter
+ * @module sbc.services
  * @description
  * API services for sbconverter.
  */
@@ -64,7 +64,7 @@ angular.module("sbc.services", [])
         /**
          * @ngdoc overview
          * @name sbc.services:Fixr
-         * @module Fixr
+         * @module sbc.services
          *
          * @requires API
          * @requires $http
@@ -114,7 +114,7 @@ angular.module("sbc.services", [])
         /**
          * @ngdoc overview
          * @name sbc.services:Currencies
-         * @module Currencies
+         * @module sbc.services
          *
          * @requires Fixr
          * @requires $http
@@ -130,7 +130,6 @@ angular.module("sbc.services", [])
                  * @ngdoc service
                  * @name sbc.services.Currencies:convert
                  * @description Converts currencies
-                 * @module Currencies
                  *
                  * @param {number} baseValue base value from which to convert
                  * @param {string} targetCurrency target currency to convert to
@@ -178,7 +177,6 @@ angular.module("sbc.services", [])
                  * @ngdoc service
                  * @name sbc.services.Currencies:getCurrencies
                  * @description Load all convertable currencies
-                 * @module Currencies
                  */
                 getCurrencies: function ()
                 {

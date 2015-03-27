@@ -1,19 +1,12 @@
 /**
+ * @ngdoc overview
+ * @name sbconverter
+ * @module sbconverter
  *
+ * @requires sbc.controllers
+ * @requires sbc.services
  *
- * @file:
- * @author: Severin Burgstaller
+ * @description
+ * Represents the main application "sbconverter".
  */
-
-angular.module("sbconverter", ["sbc.controllers", "sbc.services"])
-
-        .run(function (Currencies)
-        {
-            //var curr = Currencies.convert(100, 'EUR');
-            //
-            //curr.then(function (data)
-            //{
-            //    console.log(data);
-            //});
-        })
-;
+var app = angular.module("sbconverter", ["sbc.controllers", "sbc.services"]);

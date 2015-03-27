@@ -26,7 +26,7 @@ NG_DOCS={
       "id": "sbc.services",
       "shortName": "sbc.services",
       "type": "overview",
-      "moduleName": "sbconverter",
+      "moduleName": "sbc.services",
       "shortDescription": "API services for sbconverter.",
       "keywords": "api overview sbc sbconverter services"
     },
@@ -44,7 +44,7 @@ NG_DOCS={
       "id": "sbc.services.Currencies:convert",
       "shortName": "convert",
       "type": "service",
-      "moduleName": "Currencies",
+      "moduleName": "sbc.services",
       "shortDescription": "Converts currencies",
       "keywords": "api base basecurrency basevalue convert converts currencies currency sbc service services target targetcurrency"
     },
@@ -53,7 +53,7 @@ NG_DOCS={
       "id": "sbc.services.Currencies:getCurrencies",
       "shortName": "getCurrencies",
       "type": "service",
-      "moduleName": "Currencies",
+      "moduleName": "sbc.services",
       "shortDescription": "Load all convertable currencies",
       "keywords": "api convertable currencies load sbc service services"
     },
@@ -80,16 +80,16 @@ NG_DOCS={
       "id": "sbc.services:Currencies",
       "shortName": "Currencies",
       "type": "overview",
-      "moduleName": "Currencies",
+      "moduleName": "sbc.services",
       "shortDescription": "Currency conversion implementation (based on Fixr API)",
-      "keywords": "$http $q api conversion currencies currency fixr implementation overview sbc services"
+      "keywords": "$http $q api conversion currency fixr implementation overview sbc services"
     },
     {
       "section": "api",
       "id": "sbc.services:Fixr",
       "shortName": "Fixr",
       "type": "overview",
-      "moduleName": "Fixr",
+      "moduleName": "sbc.services",
       "shortDescription": "Fixr API implementation (needs API.getRatesURL)",
       "keywords": "$http $q api fixr getratesurl implementation overview sbc services"
     },

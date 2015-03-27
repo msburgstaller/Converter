@@ -1,16 +1,31 @@
 /**
- *
- *
- * @file:
- * @author: Severin Burgstaller
+ * @ngdoc overview
+ * @name sbc.services
+ * @module sbc.services
+ * @description
+ * API services for sbconverter.
  */
-
 angular.module("sbc.services", [])
 
+        /**
+         * @ngdoc overview
+         * @name sbc.services:API
+         * @module sbc.services
+         *
+         * @description
+         * Base API services for sbconverter.
+         */
         .factory("API", function ()
         {
             var baseURL = 'https://api.fixer.io/';
 
+            /**
+             * @ngdoc service
+             * @name sbc.services.API:getRatesURL
+             * @module sbc.services.API
+             *
+             * @description Provides access to API URL
+             */
             this.getRatesURL = function (base, from, to, date)
             {
                 from = from || false;
@@ -40,19 +55,36 @@ angular.module("sbc.services", [])
                     returnURL += ',' + to
                 }
 
-                console.log(returnURL);
-
                 return returnURL
             };
 
             return this;
         })
 
+        /**
+         * @ngdoc overview
+         * @name sbc.services:Fixr
+         * @module sbc.services
+         *
+         * @requires API
+         * @requires $http
+         * @requires $q
+         *
+         * @description
+         * Fixr API implementation (needs API.getRatesURL)
+         */
         .factory("Fixr", function (API, $http, $q)
         {
             var currencies = {};
 
             return {
+                /**
+                 * @ngdoc service
+                 * @name sbc.services.Fixr:getExchangeRates
+                 * @module Fixr
+                 * @description Load exchange rates
+                 * @param {string} baseCurrency base currency to query for
+                 */
                 getExchangeRates: function (baseCurrency)
                 {
                     var deferred = $q.defer();
@@ -79,9 +111,30 @@ angular.module("sbc.services", [])
 
         })
 
+        /**
+         * @ngdoc overview
+         * @name sbc.services:Currencies
+         * @module sbc.services
+         *
+         * @requires Fixr
+         * @requires $http
+         * @requires $q
+         *
+         * @description
+         * Currency conversion implementation (based on Fixr API)
+         */
         .factory("Currencies", function (Fixr, $http, $q)
         {
             return {
+                /**
+                 * @ngdoc service
+                 * @name sbc.services.Currencies:convert
+                 * @description Converts currencies
+                 *
+                 * @param {number} baseValue base value from which to convert
+                 * @param {string} targetCurrency target currency to convert to
+                 * @param {string} baseCurrency base currency to convert from
+                 */
                 convert: function (baseValue, targetCurrency, baseCurrency)
                 {
                     baseCurrency = baseCurrency || 'EUR';
@@ -120,6 +173,11 @@ angular.module("sbc.services", [])
                     return deferred.promise;
                 },
 
+                /**
+                 * @ngdoc service
+                 * @name sbc.services.Currencies:getCurrencies
+                 * @description Load all convertable currencies
+                 */
                 getCurrencies: function ()
                 {
                     var deferred = $q.defer();
@@ -139,6 +197,4 @@ angular.module("sbc.services", [])
                     return deferred.promise;
                 }
             };
-
-        })
-;
+        });
