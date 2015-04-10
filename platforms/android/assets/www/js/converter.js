@@ -1,16 +1,16 @@
 /**
  * @ngdoc overview
- * @name sbconverter
- * @module sbconverter
+ * @name converter
+ * @module converter
  *
  * @requires ionic
  * @requires sbc.controllers
  * @requires sbc.services
  *
  * @description
- * Represents the main application "sbconverter".
+ * Represents the main application "converter".
  */
-angular.module('sbconverter', ["ionic", "sbc.controllers", "sbc.services"])
+angular.module('converter', ["ionic", "sbc.controllers", "sbc.services"])
 
         .run(function ($ionicPlatform)
         {

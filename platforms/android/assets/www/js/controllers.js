@@ -1,9 +1,9 @@
 /**
  * @ngdoc overview
  * @name sbc.controllers
- * @module sbconverter
+ * @module converter
  * @description
- * Controller of MVC pattern for sbconverter
+ * Controller of MVC pattern for converter
  */
 angular.module("sbc.controllers", [])
 

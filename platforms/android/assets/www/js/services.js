@@ -3,7 +3,7 @@
  * @name sbc.services
  * @module sbc.services
  * @description
- * API services for sbconverter.
+ * API services for converter.
  */
 angular.module("sbc.services", [])
 
@@ -13,7 +13,7 @@ angular.module("sbc.services", [])
          * @module sbc.services
          *
          * @description
-         * Base API services for sbconverter.
+         * Base API services for converter.
          */
         .factory("API", function ()
         {

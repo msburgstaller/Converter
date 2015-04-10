@@ -17,9 +17,9 @@ NG_DOCS={
       "id": "sbc.controllers",
       "shortName": "sbc.controllers",
       "type": "overview",
-      "moduleName": "sbconverter",
+      "moduleName": "converter",
       "shortDescription": "Controller of MVC pattern for converter",
-      "keywords": "api controller controllers converter mvc overview pattern sbc sbconverter"
+      "keywords": "api controller controllers converter mvc overview pattern sbc"
     },
     {
       "section": "api",
@@ -81,8 +81,8 @@ NG_DOCS={
       "shortName": "API",
       "type": "overview",
       "moduleName": "sbc.services",
-      "shortDescription": "Base API services for sbconverter.",
-      "keywords": "api base overview sbc sbconverter services"
+      "shortDescription": "Base API services for converter.",
+      "keywords": "api base converter overview sbc services"
     },
     {
       "section": "api",
