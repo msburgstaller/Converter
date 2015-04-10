@@ -1,25 +1,6 @@
 # Converter
 __Package__: com.severinburgstaller.converter
 
-    Name:       Severin Burgstaller
-    Matr.-Nr.:  a1301837
-    Gruppe:     03
-     
-    Framework:    Cordova, Ionic, Angular.JS
-    API-Version:  Android Lollipop 4.4+ / iOS 6+
-    
-    Gerät(e), auf denen getestet wurde: Motorola Moto G, iPhone 6 (iOS 8)
-    Emulators: Android 4.4/5.0/5.1, iOS 7/8 (iPhone 5, iPad Air)
-    
-    Entwicklungsumgebung (für Android relevant):
-    PHPStorm
- 
-    Externe Libraries und Frameworks:
-    Ionic, Angular.JS
- 
-    Dauer der Entwicklung:
-    3h
-
 ## Scope
 This project aims to provide a very basic converter app for currencies based on Fixr and implements angular services for this API.
 
