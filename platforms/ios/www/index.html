@@ -1,73 +1,85 @@
 <!DOCTYPE html>
 <html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>SBConverter</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Converter</title>
 
-    <link rel="stylesheet" type="text/css" href="lib/bootstrap/dist/css/bootstrap.min.css">
+    <!-- compiled css output -->
+    <link href="css/ionic.app.css" rel="stylesheet">
 </head>
-<body ng-app="sbconverter">
 
-<div class="container" ng-controller="ConversionSelectionCtrl">
+<body ng-app="sbconverter" ng-controller="ConversionSelectionCtrl" class="platform-ios platform-cordova platform-webview">
 
-    <div class="row">
-        <div class="col-xs-12">
-            <h2>Währung</h2>
+<ion-pane>
+    <ion-header-bar class="bar-stable">
+        <h1 class="title">Converter</h1>
+    </ion-header-bar>
+    <ion-content>
 
-            <div class="input-group">
-                <input type="number" ng-model="conversion.baseValue" class="form-control input-lg"
-                       aria-label="Wert" placeholder="Wert" value="{{conversion.baseValue}}" ng-keyup="convert()">
+        <div class="list">
 
-                <div class="input-group-btn">
-                    <ul class="dropdown-menu" role="menu">
-                        <li ng-repeat="curr in currencies">
-                            <a href="#" ng-click="updateCurrency('base', curr)">{{curr}}</a>
-                        </li>
-                    </ul>
+            <div class="item item-divider">
+                Von
+            </div>
 
-                    <button type="button" class="btn btn-block btn-lg btn-default dropdown-toggle"
-                            data-toggle="dropdown"
-                            aria-expanded="false">{{conversion.baseCurrency}} <span class="caret"></span></button>
+            <label class="item item-input">
+                <span class="input-label">Ausgangswert</span>
+                <input ng-keyup="convert()" type="number" ng-model="conversion.baseValue" placeholder="First Name"
+                       aria-label="Wert" placeholder="Wert" value="{{conversion.baseValue}}">
+            </label>
+
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Ausgangswährung
+                </div>
+
+                <select ng-options="curr as curr for curr in currencies" ng-model="conversion.baseCurrency"
+                        ng-change="convert()">
+                </select>
+            </label>
+
+            <div class="item item-divider">
+                Nach
+            </div>
+
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Zielwährung
+                </div>
+
+                <select ng-options="curr as curr for curr in currencies"
+                        ng-model="conversion.targetCurrency" ng-change="convert()"></select>
+            </label>
+
+            <div class="item item-divider">
+                Details
+            </div>
+
+            <div class="item">
+                Wechselkurs
+
+                <div class="item-note">
+                    1 {{conversion.baseCurrency}} = {{conversion.rate}}
+                    {{conversion.targetCurrency}}
                 </div>
             </div>
         </div>
 
-        <div class="col-xs-12">
-            <h2>nach</h2>
+    </ion-content>
 
-            <div class="dropdown">
-                <ul class="dropdown-menu" role="menu">
-                    <li ng-repeat="curr in currencies">
-                        <a href="#" ng-click="updateCurrency('target', curr)">{{curr}}</a>
-                    </li>
-                </ul>
+    <ion-footer-bar class="bar-calm">
+        <h1 class="title">{{conversion.targetValue}} {{conversion.targetCurrency}}</h1>
+    </ion-footer-bar>
+</ion-pane>
 
-                <button type="button" class="btn btn-block btn-lg btn-default dropdown-toggle" data-toggle="dropdown"
-                        aria-expanded="false">Zielwährung{{conversion.targetCurrency!= "" ? ": " :
-                    ""}}{{conversion.targetCurrency}} <span class="caret"></span></button>
-            </div>
-        </div>
-    </div>
+<script src="lib/ionic/js/ionic.bundle.min.js"></script>
 
-    <div class="row" ng-class="{hide:conversion.targetValue==null}">
-        <div class="col-xs-12">
-            <h2></h2>
+<script src="cordova.js"></script>
 
-            <div class="jumbotron">
-                <h1>{{conversion.targetValue}} {{conversion.targetCurrency}}
-                    <small><br>Umrechnungskurs: 1 {{conversion.baseCurrency}} = {{conversion.rate}} {{conversion.targetCurrency}}</small>
-                </h1>
-            </div>
-        </div>
-    </div>
+<script src="js/converter.js"></script>
+<script src="js/controllers.js"></script>
+<script src="js/services.js"></script>
 
-</div>
-
-<script type="text/javascript" src="lib/angular/angular.js"></script>
-<script type="text/javascript" src="lib/jquery/dist/jquery.js"></script>
-<script type="text/javascript" src="lib/bootstrap/dist/js/bootstrap.js"></script>
-<script type="text/javascript" src="js/controllers.js"></script>
-<script type="text/javascript" src="js/services.js"></script>
-<script type="text/javascript" src="js/sbconverter.js"></script>
 </body>
 </html>
