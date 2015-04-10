@@ -1,5 +1,5 @@
 {
-  "name": "converter",
+  "name": "Converter",
   "version": "1.0.0",
   "description": "Converts currencies based on Fixr.",
   "main": "www/index.html",

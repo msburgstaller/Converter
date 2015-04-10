@@ -53,7 +53,7 @@ gulp.task('git-check', function(done) {
 gulp.task('docs', [], function ()
 {
     var gulpDocs = require('gulp-ngdocs');
-    return gulp.src('www/js/*.js')
+    return gulp.src('www/*/*.js')
             .pipe(gulpDocs.process())
             .pipe(gulp.dest('./docs'));
 });
