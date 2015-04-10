@@ -64,4 +64,4 @@ Default Ionic artwork. No adaptions here.
 This project is licensed under MIT license. Any framework used is licensed under the respective license of the framework itself.
 
 ## GitHub
-Find the project on GitHub: []
+Find the project on GitHub: [https://github.com/freakySevi/Converter]
