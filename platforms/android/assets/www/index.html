@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Converter</title>
+
+    <!-- compiled css output -->
+    <link href="css/ionic.app.css" rel="stylesheet">
+</head>
+
+<body ng-app="sbconverter" ng-controller="ConversionSelectionCtrl" class="platform-android platform-cordova platform-webview">
+
+<ion-pane>
+    <ion-header-bar class="bar-stable">
+        <h1 class="title">Converter</h1>
+    </ion-header-bar>
+    <ion-content>
+
+        <div class="list">
+
+            <div class="item item-divider">
+                Von
+            </div>
+
+            <label class="item item-input">
+                <span class="input-label">Ausgangswert</span>
+                <input ng-keyup="convert()" type="number" ng-model="conversion.baseValue" placeholder="First Name"
+                       aria-label="Wert" placeholder="Wert" value="{{conversion.baseValue}}">
+            </label>
+
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Ausgangswährung
+                </div>
+
+                <select ng-options="curr as curr for curr in currencies" ng-model="conversion.baseCurrency"
+                        ng-change="convert()">
+                </select>
+            </label>
+
+            <div class="item item-divider">
+                Nach
+            </div>
+
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Zielwährung
+                </div>
+
+                <select ng-options="curr as curr for curr in currencies"
+                        ng-model="conversion.targetCurrency" ng-change="convert()"></select>
+            </label>
+
+            <div class="item item-divider">
+                Details
+            </div>
+
+            <div class="item">
+                Wechselkurs
+
+                <div class="item-note">
+                    1 {{conversion.baseCurrency}} = {{conversion.rate}}
+                    {{conversion.targetCurrency}}
+                </div>
+            </div>
+        </div>
+
+    </ion-content>
+
+    <ion-footer-bar class="bar-calm">
+        <h1 class="title">{{conversion.targetValue}} {{conversion.targetCurrency}}</h1>
+    </ion-footer-bar>
+</ion-pane>
+
+<script src="lib/ionic/js/ionic.bundle.min.js"></script>
+
+<script src="cordova.js"></script>
+
+<script src="js/converter.js"></script>
+<script src="js/controllers.js"></script>
+<script src="js/services.js"></script>
+
+</body>
+</html>
